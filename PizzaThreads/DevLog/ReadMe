@@ -29,16 +29,34 @@ PizzaThreads
     │   └───pizzathreads (source app name)
     │       ├───main (main source container for app code)
     │       │   ├───controller (controls/handles user input)
-    │       │   │   └───Manager.java 
+    |       |   |   |───Input.java (global input shared along all classes [this is a util class])
+    │       │   │   └───Manager.java (manages all requests and input)
     │       │   └───menu (displays menu and prices to user) / (will be later for receipt amount)
     │       │       ├───prices 
     │       │       │   ├───Sizes.java (pizza size names and prices)
     │       │       │   ├───Toppings.java (topping names and prices)
     │       │       │   ├───ShowSizes.java (display pizza sizes)
     │       │       │   └───ShowToppings.java (display pizza topping names)
+    |       |───questions
+    |       |       |───FrankQ.java (Stores all possible responses and questions frank [pizza owner] may store)
+    |       |───savedconverter(stores all outputs as logs, will later be read)    
     │       ├───services (contains business logic [more implemented soon])
-    |       |
+    |       |       |───orders (handles user request)
+    |       |       |     ├─── SizeOrder.java (user inputs pizza size here) 
+    |       |       |     └─── ToppingsOrder.java (user inputs toppings here)
+    |       ├───receipt (Adds all/Final Balance & detailed description of all orders => printing receipt)         
+    |       |       |─── SizesBalance.java (results total balance of all sizes confirmed by user)
+    |       |       |─── ToppingsBalance.java (results total balance of all toppings confirmed by user)
+    |       |       └─── FinalBalance.java (results in all balances put together by user, and prints out specific details)
     │       └───tests (Test code for fluency and efficiency)
-    │           └───ToppingsOrder.java
+    │       |   └───ToppingsOrder.java
+    |       └─── App.java (Main Application)
     └───...
 
+
+Issues/Questions & Possible implementations
+
+    - 1. How will the user be able to request multiple pizzas?
+        - 
+    - 2. How will manager be able to control different inputs if threads are involved?
+        - could use a scanner class solely from one class, then implement it as sole input in all classes
