@@ -39,7 +39,10 @@ PizzaThreads
     │       │       │   └───ShowToppings.java (display pizza topping names)
     |       |───questions
     |       |       |───FrankQ.java (Stores all possible responses and questions frank [pizza owner] may store)
-    |       |───savedconverter(stores all outputs as logs, will later be read)    
+    |       |───resources (json file for getting data)
+    |       |       |───pom.xml (dependency used to allow other classes to save inputted data )
+    │       │       └───output.json(all viable inputs outputted in this file)
+    |       |───savedconverter(stores all saved inputs from other files, which will be later sent to output.json)    
     │       ├───services (contains business logic [more implemented soon])
     |       |       |───orders (handles user request)
     |       |       |     ├─── SizeOrder.java (user inputs pizza size here) 
@@ -60,3 +63,30 @@ Issues/Questions & Possible implementations
         - 
     - 2. How will manager be able to control different inputs if threads are involved?
         - could use a scanner class solely from one class, then implement it as sole input in all classes
+
+Converter saved code (test)
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Data {
+    private String name;
+    private int age;
+
+    // Constructors, getters, and setters
+
+    public static void main(String[] args) {
+        // Create an instance of your data class
+        Data data = new Data("John", 25);
+
+        // Convert to JSON
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("output.json"), data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Idea:
+    all desired classes will have a specific input set to match desired data
