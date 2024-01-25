@@ -9,14 +9,18 @@ public class ShowToppings {
 
         
     static void toppingsDisplay() { // displays user sizes
-        System.out.println("            [Sizes]");
+        System.out.println("            (Pizza Toppings)");
             for (int i = 0; i < toppingNames.length; i++) {
                 System.out.println(toppingNames[i] + ": " + toppingsPriceArr[i]);
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(350);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+    }
+
+    public static void main(String [] args) {
+        toppingsDisplay();
     }
 }

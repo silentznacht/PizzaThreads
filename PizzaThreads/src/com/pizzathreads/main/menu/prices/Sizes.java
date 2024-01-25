@@ -1,6 +1,5 @@
 package main.menu.prices;
 
-
 public class Sizes {
 
     public static int smallPie = 5;

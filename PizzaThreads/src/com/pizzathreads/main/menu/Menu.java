@@ -1,9 +1,14 @@
+package main.menu;
+
 
 import java.util.*;
+import main.controller.*;
 
 public class Menu implements Runnable { 
 	static Thread thread;
-	private static void startMenu() {
+	static Scanner inputSc = Input.userInput;
+
+	private static void startMenu(boolean menuLoop) {
 		    System.out.println
                 (
                         """
@@ -15,13 +20,40 @@ public class Menu implements Runnable {
                             
                         """ 
                 );
+
+			String menuInput = inputSc.nextLine();
+
+				try {
+					while (!menuLoop) {
+						switch(menuInput) {
+							case "1":
+							// Order pizza sequence here
+								menuLoop = true;
+								break;
+
+							case "2":
+							// Displays menu
+								menuLoop = true;
+								break;
+
+							case "3":
+							// Exits Program
+								menuLoop = true;
+								System.exit(0);
+								break;
+						}
+					}
+				} catch (java.util.InputMismatchException e) {
+					// handles exception & invalid ints passed such as strs & chars
+					System.out.println("Err: Invalid input. Please enter a string.");
+				} 
 			
 	}
 
 	@Override
 	public void run() {
-		// TODO: Menu Thread
-		startMenu();
+	// TODO: Menu Thread
+		startMenu(false);
 
 	}
 
