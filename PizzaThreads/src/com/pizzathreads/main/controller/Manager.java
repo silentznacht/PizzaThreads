@@ -8,7 +8,14 @@ import main.resources.*;
 
 
 public class Manager {
-    // Thread objects
-    Menu menu = new Menu();
-    
-}
+ 
+    // App 
+    public static void appLoginController() {
+
+    }
+
+    public static void appSignUpController() {
+
+    }
+
+} 
