@@ -1,9 +1,14 @@
 package main.controller;
 
 import main.menu.*;
-import main.services.receipt.*;
+import main.services.*;
+import main.questions.*;
+import main.savedconverter.*;
+import main.resources.*;
+
+
 public class Manager {
     // Thread objects
-    Menu m = new Menu();
+    Menu menu = new Menu();
     
 }

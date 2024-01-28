@@ -34,9 +34,11 @@ PizzaThreads
     │       │   └───menu (displays menu and prices to user) / (will be later for receipt amount)
     │       │       ├───prices 
     │       │       │   ├───Sizes.java (pizza size names and prices)
-    │       │       │   ├───Toppings.java (topping names and prices)
-    │       │       │   ├───ShowSizes.java (display pizza sizes)
-    │       │       │   └───ShowToppings.java (display pizza topping names)
+    │       │       │   └───Toppings.java (topping names and prices)
+    │       │       │───Menu.java (friendly menu used to direct users)
+    │       │       │───Display.java(displays the menu)
+    │       │       │───ShowSizes.java (display pizza sizes)
+    │       │       │───ShowToppings.java (display pizza topping names)
     |       |───questions
     |       |       |───FrankQ.java (Stores all possible responses and questions frank [pizza owner] may store)
     |       |───resources (json file for getting data)
@@ -90,3 +92,4 @@ public class Data {
 
 Idea:
     all desired classes will have a specific input set to match desired data
+    

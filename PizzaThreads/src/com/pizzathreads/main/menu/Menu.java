@@ -33,9 +33,8 @@ public class Menu implements Runnable {
 
 							case "2":
 							// Displays menu
-								menuLoop = true;
-								break;
-
+								Display.displayMenu();
+								startMenu(menuLoop); // recursion 
 							case "3":
 							// Exits Program
 								menuLoop = true;
@@ -50,11 +49,13 @@ public class Menu implements Runnable {
 			
 	}
 
+	public static void main(String[] args) {
+		startMenu(false);
+	}
 	@Override
 	public void run() {
 	// TODO: Menu Thread
 		startMenu(false);
-
 	}
 
 
