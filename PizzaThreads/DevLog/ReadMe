@@ -28,6 +28,12 @@ PizzaThreads
     ├───com 
     │   └───pizzathreads (source app name)
     │       ├───main (main source container for app code)
+    │       │   ├───account(user login and signup pages)
+    |       |   |   |───login (checks users previous credentials [if they match json file], then makes login valid)
+    |       |   |   |    |───Login.java(Lets user input login credentials)
+    |       |   |   |    └───LoginStatusChecker(passes userinput from login class, then compares if passed input matched json fiel, determines if login is valid or not)
+    |       |   |   |───signup
+    |       |   |   |    └───SignUp.java(Allows user to create/signup for a new account)
     │       │   ├───controller (controls/handles user input)
     |       |   |   |───Input.java (global input shared along all classes [this is a util class])
     │       │   │   └───Manager.java (manages all requests and input)

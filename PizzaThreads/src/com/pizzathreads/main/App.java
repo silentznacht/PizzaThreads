@@ -37,11 +37,13 @@ public class App {
                     3. Exit
                 
                 [Enter Choice Here]: 
-            """;
 
-        int userChoice = appInput.nextInt();
+            """;
+            
             do {
                 System.out.println(intro);
+                int userChoice = appInput.nextInt();
+
                 switch (userChoice) {
                     case 1:
                         Manager.appLoginController();
@@ -51,6 +53,11 @@ public class App {
                     case 2:
                         Manager.appSignUpController();
                         loopStart = true;
+                        break;
+
+                    case 3:
+                        System.exit(0);
+                        loopStart = false;
                         break;
                 
                     default:

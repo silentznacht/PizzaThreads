@@ -11,11 +11,11 @@ public class Manager {
  
     // App 
     public static void appLoginController() {
-
+        System.out.println("LoginTest: Your In");
     }
 
     public static void appSignUpController() {
-
+        System.out.println("SignUpTest: Your In");
     }
 
 } 
