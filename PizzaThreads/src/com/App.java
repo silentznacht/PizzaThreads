@@ -1,7 +1,7 @@
-package main;
 
 import main.controller.*;
 import java.util.*;
+
 public class App {
 
     private static Scanner appInput = Input.userInput;

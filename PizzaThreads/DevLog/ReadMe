@@ -47,9 +47,6 @@ PizzaThreads
     │       │       │───ShowToppings.java (display pizza topping names)
     |       |───questions
     |       |       |───FrankQ.java (Stores all possible responses and questions frank [pizza owner] may store)
-    |       |───resources (json file for getting data)
-    |       |       |───pom.xml (dependency used to allow other classes to save inputted data )
-    │       │       └───output.json(all viable inputs outputted in this file)
     |       |───savedconverter(stores all saved inputs from other files, which will be later sent to output.json)    
     │       ├───services (contains business logic [more implemented soon])
     |       |       |───orders (handles user request)
@@ -62,7 +59,7 @@ PizzaThreads
     │       └───tests (Test code for fluency and efficiency)
     │       |   └───ToppingsOrder.java
     |       └─── App.java (Main Application)
-    └───...
+    └───pom.xml (dependency used to allow other classes to save inputted data )
 
 
 Issues/Questions & Possible implementations

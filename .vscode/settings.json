@@ -1,5 +1,7 @@
 {
     "java.project.sourcePaths": [
-        "PizzaThreads\\src\\com\\pizzathreads"
-    ]
+        "PizzaThreads\\src\\com\\pizzathreads",
+        "PizzaThreads\\src\\com"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
