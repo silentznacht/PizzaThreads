@@ -66,7 +66,7 @@ public class SignUp implements Runnable {
     }   
     
     static void signUp() { // sign up
-        //setEmail();
+        setEmail();
         setPw();
     }
 
