@@ -1,5 +1,7 @@
 package main.account.signup;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import main.controller.Input;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,12 +13,19 @@ public class SignUp implements Runnable {
     private static Scanner signUpSc = Input.userInput;
     private static String [] organizationArr = {"gmail", "yahoo", "outlook"};
     private static String [] specialChars = {"()", "{}" , "[]", "|", "`", "¬", "¦", "!" ,"£", "$", "%", "^", "&", "*", "<", ">", ":", ";", "#", "~", "_", "-", "+", "=", "@"};
+    private static String userEmail;
+    private static String password;
     
+    public SignUp (String userEmail,  String password) {
+        SignUp.userEmail = password;
+        SignUp.password = password;
+    }
+
     static void setEmail(String emailToJson) {
         boolean validEmail = false;
         boolean nextMethod = false;
         String email;
-        String userEmail;
+        //String userEmail;
 
         do {
             System.out.println("[ Email SignUp (Please Enter a Valid Email) ]: ");
@@ -45,28 +54,31 @@ public class SignUp implements Runnable {
         boolean validPassword = false;
         boolean specialCharFound = false;
         boolean nextMethod2 = false;
-        String password;
+        //String password;
       
 
         do {
             System.out.println("[Create A Password (must contain a special character [!, @, #, $, etc])]: ");
             password = signUpSc.nextLine();
 
-                for (String chars : specialChars) {
-                    if (password.toLowerCase().contains(chars)) {
-                        specialCharFound = true;
-                        nextMethod2 = true;
-                        break;
+            try {
+                    for (String chars : specialChars) {
+                        if (password.toLowerCase().contains(chars)) {
+                            specialCharFound = true;
+                            nextMethod2 = true;
+                            break;
+                        } 
                     } 
-                } 
-
-                if (specialCharFound) {                           
-                    System.out.println("Password: " + password);
-                    validPassword = true;
-                    break;
-                } else {
-                    System.err.println("[Err]: Invalid Password, Try Again");
-                }
+                    // TODO: add try catch next for num err, then implement json process in json method
+                    if (specialCharFound) {                           
+                        System.out.println("Password: " + password);
+                        validPassword = true;
+                        break;
+                    } else {
+                       System.err.println("[Err]: Invalid Password, Try Again");
+                    }
+            } catch (java.util.InputMismatchException e) {System.err.println("[Err101]: Use of ints detected");}
+        
         } while (!validPassword);
 
         pwToJson = password;
@@ -75,21 +87,25 @@ public class SignUp implements Runnable {
     }   
     
     static void signUp() { // sign up
-        /*
-         *                              What to next?
-           
-            *  Find a way to workflow the signup sys, if email is valid will pass onto the pw method
-            *  Then pass these inputs to json convert file
-            *  Finally implement all this in run method thread
-         
-        */
-
         setEmail(null);
     }
 
-    static void jsonConvert(String userEmail, String userPassword) { // converts new credentials to json data
-        //SignUp signUp = new SignUp(userEmail, password) // email, password
-        System.out.println("[UPDATE]: Json implement soon")
+    static void jsonConvert(String emailToJson, String pwToJson) { // converts new credentials to json data
+        // input values for debugging
+        System.out.println("Email: " + emailToJson);
+        System.out.println("Password: " + pwToJson);
+
+        // Convert to JSON
+        try {
+            // Create SignUp object
+            SignUp signup = new SignUp(emailToJson, pwToJson);
+            // Convert to JSON
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("output.json"), signup);
+            System.out.println("[UPDATE]: Json implemented successfully");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
@@ -97,7 +113,6 @@ public class SignUp implements Runnable {
     }
     @Override
     public void run() {
-        // TODO Auto-generated method stub
         
     }
     

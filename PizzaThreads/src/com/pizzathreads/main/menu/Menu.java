@@ -54,7 +54,6 @@ public class Menu implements Runnable {
 	}
 	@Override
 	public void run() {
-	// TODO: Menu Thread
 		startMenu(false);
 	}
 
