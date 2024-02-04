@@ -13,12 +13,12 @@ public class SignUp implements Runnable {
     private static Scanner signUpSc = Input.userInput;
     private static String [] organizationArr = {"gmail", "yahoo", "outlook"};
     private static String [] specialChars = {"()", "{}" , "[]", "|", "`", "¬", "¦", "!" ,"£", "$", "%", "^", "&", "*", "<", ">", ":", ";", "#", "~", "_", "-", "+", "=", "@"};
+    
     private static String userEmail;
     private static String password;
-    
-    public SignUp (String userEmail,  String password) {
-        SignUp.userEmail = password;
-        SignUp.password = password;
+
+    public SignUp() { //
+        super();
     }
 
     static void setEmail(String emailToJson) {
@@ -97,14 +97,15 @@ public class SignUp implements Runnable {
 
         // Convert to JSON
         try {
-            // Create SignUp object
-            SignUp signup = new SignUp(emailToJson, pwToJson);
-            // Convert to JSON
+            SignUp jsonData = new SignUp();
+            jsonData.userEmail = emailToJson;
+            jsonData.password = pwToJson;
+
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writeValue(new File("output.json"), signup);
             System.out.println("[UPDATE]: Json implemented successfully");
+            objectMapper.writeValue(new File("output.json"), jsonData);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("[Err]: Error converting to JSON: " + e.getMessage());
         }
     }
 
@@ -113,7 +114,7 @@ public class SignUp implements Runnable {
     }
     @Override
     public void run() {
-        
+        signUp();
     }
     
 }

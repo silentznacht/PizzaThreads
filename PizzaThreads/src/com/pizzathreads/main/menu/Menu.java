@@ -30,7 +30,6 @@ public class Menu implements Runnable {
 							// Order pizza sequence here
 								menuLoop = true;
 								break;
-
 							case "2":
 							// Displays menu
 								Display.displayMenu();
@@ -40,6 +39,11 @@ public class Menu implements Runnable {
 								menuLoop = true;
 								System.exit(0);
 								break;
+						}
+
+						// super-secret cheat & game
+						if (menuInput.toLowerCase().equalsIgnoreCase("AshenStar")) {
+
 						}
 					}
 				} catch (java.util.InputMismatchException e) {
