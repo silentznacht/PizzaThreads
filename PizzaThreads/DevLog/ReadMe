@@ -96,3 +96,15 @@ public class Data {
 Idea:
     all desired classes will have a specific input set to match desired data
     
+
+Ticket Codes:
+    1010 => URGENT
+    1212 => IMPORTANT
+    2583 => DUE
+    !?!?! => 
+Issues:
+    - App => manager => signup [input from app class is being transferred to signup class] (Ticket: 1212) {Date: 2.4.24}
+    - SignUp [System inputstream isnt being converted into json and creating a json file] (Ticket: 1010) {Date: 2.4.24}
+
+
+Solutions:

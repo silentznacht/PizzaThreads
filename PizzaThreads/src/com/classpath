@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <classpath>
+        <classpathentry kind="lib" path="lib/jackson-core-2.16.1.jar"/>
+        <classpathentry kind="lib" path="lib/jackson-annotations-2.15.3.jar"/>
+        <classpathentry kind="lib" path="lib/com.fasterxml.jackson.databind.jar"/>
+        <!-- Add other classpath entries as needed -->
+        <classpathentry kind="src" path="src"/>
+        <classpathentry kind="output" path="bin"/>
+    </classpath>

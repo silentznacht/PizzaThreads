@@ -5,7 +5,7 @@ import java.util.*;
 public class App {
 
     private static Scanner appInput = Input.userInput;
-
+    
     static void appTitle() {
         
             String title = """
@@ -25,8 +25,7 @@ public class App {
     }
 
     static void appIntro() { // Login or SignUP
-        appTitle();
-                
+        appTitle(); 
         boolean loopStart = false;
         String intro = 
             """
@@ -40,31 +39,39 @@ public class App {
 
             """;
             
-            do {
-                System.out.println(intro);
-                int userChoice = appInput.nextInt();
-
-                switch (userChoice) {
-                    case 1:
-                        Manager.appLoginController();
-                        loopStart = true;
-                        break;
-                    
-                    case 2:
-                        Manager.appSignUpController();
-                        loopStart = true;
-                        break;
-
-                    case 3:
-                        System.exit(0);
-                        loopStart = false;
-                        break;
+            try {
                 
-                    default:
-                        System.err.println(intro);
-                        break;
-                }
-            } while (!loopStart);
+                do {
+
+                    System.out.println(intro);
+                    int userChoice = appInput.nextInt();
+
+                    switch (userChoice) {
+                        case 1:
+                            Manager.appLoginController();
+                            appInput.close(); 
+                            loopStart = true;
+                            break;
+                        
+                        case 2:
+                            Manager.appSignUpController();
+                            appInput.close();
+                            loopStart = true;
+                            break;
+
+                        case 3:
+                            System.exit(0);
+                            loopStart = false;
+                            break;
+                    
+                        default:
+                            System.err.println(intro);
+                            break;
+                    }
+                } while (!loopStart); 
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Err **SYS CRASH: MUST RESTART** : Enter a numeric choice from menu (1 - 3)");
+            } 
     }
 
     public static void main(String[] args) {
