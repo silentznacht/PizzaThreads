@@ -1,14 +1,13 @@
 
-import main.controller.*;
 import java.util.*;
+import main.controller.*;
 
 public class App {
-
-    private static Scanner appInput = Input.userInput;
-    
+    private static Scanner appInput = new Scanner(System.in);
     static void appTitle() {
         
             String title = """
+
                 ╔═══════════════════════════════════════════════════════╗
                 ║   _____ _           _______ _                        _║
                 ║  |  __ (_)         |__   __| |                      | ║
@@ -17,7 +16,7 @@ public class App {
                 ║  | |   | |/ / / / (_| | |  | | | | | |  __/ (_| | (_| ║
                 ║  |_|   |_/___/___\\__,_|_|  |_| |_|_|  \\___|\\__,_|\\║
                 ╚═══════════════════════════════════════════════════════╝                          
-                -
+                                    (est 2024)
                 """;
 
             System.out.print(title);
@@ -39,7 +38,7 @@ public class App {
 
             """;
             
-            try {
+            //try {
                 
                 do {
 
@@ -56,6 +55,7 @@ public class App {
                         case 2:
                             Manager.appSignUpController();
                             appInput.close();
+                            Input.userInput.close();
                             loopStart = true;
                             break;
 
@@ -69,9 +69,9 @@ public class App {
                             break;
                     }
                 } while (!loopStart); 
-            } catch (java.util.InputMismatchException e) {
-                System.out.println("Err **SYS CRASH: MUST RESTART** : Enter a numeric choice from menu (1 - 3)");
-            } 
+            // } catch (java.util.InputMismatchException e) {
+            //     System.out.println("Err **SYS CRASH: MUST RESTART** : Enter a numeric choice from menu (1 - 3)");
+            // } 
     }
 
     public static void main(String[] args) {

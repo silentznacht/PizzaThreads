@@ -101,10 +101,11 @@ Ticket Codes:
     1010 => URGENT
     1212 => IMPORTANT
     2583 => DUE
-    !?!?! => 
+    !?!?! => THIS PROBLEM MUST DIE!!!!!!
 Issues:
     - App => manager => signup [input from app class is being transferred to signup class] (Ticket: 1212) {Date: 2.4.24}
-    - SignUp [System inputstream isnt being converted into json and creating a json file] (Ticket: 1010) {Date: 2.4.24}
+    - SignUp [System inputstream isnt being converted into json and creating a json file] (Ticket: 1010) {Date: 2.4.24} {Fixed: 2.6.24}
 
 
 Solutions:
+    - {TICKET: 1010} => "I'm an idiot :( , having an abstract input class made the input stream messy, I just implemented a private local scanner in the class instead"

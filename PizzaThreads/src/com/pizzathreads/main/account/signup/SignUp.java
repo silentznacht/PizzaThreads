@@ -17,10 +17,6 @@ public class SignUp implements Runnable {
     private static String userEmail;
     private static String password;
 
-    public SignUp() { //
-        super();
-    }
-
     static void setEmail(String emailToJson) {
         boolean validEmail = false;
         boolean nextMethod = false;
@@ -55,14 +51,13 @@ public class SignUp implements Runnable {
         boolean specialCharFound = false;
         boolean nextMethod2 = false;
         //String password;
-      
-
+    
         do {
             System.out.println("[Create A Password (must contain a special character [!, @, #, $, etc])]: ");
             password = signUpSc.nextLine();
 
             try {
-                    for (String chars : specialChars) {
+                for (String chars : specialChars) {
                         if (password.toLowerCase().contains(chars)) {
                             specialCharFound = true;
                             nextMethod2 = true;
@@ -70,8 +65,7 @@ public class SignUp implements Runnable {
                         } 
                     } 
                     // TODO: add try catch next for num err, then implement json process in json method
-                    if (specialCharFound) {                           
-                        System.out.println("Password: " + password);
+                    if (specialCharFound) {                 
                         validPassword = true;
                         break;
                     } else {
@@ -83,11 +77,15 @@ public class SignUp implements Runnable {
 
         pwToJson = password;
         if (nextMethod2) jsonConvert(emailToJson, pwToJson);
+
+        // Debug info
+
+            System.out.println("Email: " + emailToJson);
     
     }   
     
     static void signUp() { // sign up
-        setEmail(null);
+        setEmail("");
     }
 
     static void jsonConvert(String emailToJson, String pwToJson) { // converts new credentials to json data
@@ -109,9 +107,6 @@ public class SignUp implements Runnable {
         }
     }
 
-    public static void main(String[] args) {
-        signUp();
-    }
     @Override
     public void run() {
         signUp();
