@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    // Maven Central Repository
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.16.1'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.16.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+}
+
+// Define the source and target compatibility for Java compilation
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

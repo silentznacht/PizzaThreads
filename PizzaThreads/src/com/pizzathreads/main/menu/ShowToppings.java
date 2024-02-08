@@ -1,6 +1,6 @@
-package main.menu;
+package menu;
 
-import main.menu.prices.Toppings;
+import menu.prices.Toppings;
 
 public class ShowToppings {
 

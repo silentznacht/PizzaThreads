@@ -1,11 +1,17 @@
-package main.account.signup;
+package account.signup;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
-import main.controller.Input;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import main.controller.Input;
 
+import java.util.*;
+import controller.Input;
 public class SignUp implements Runnable {
 
     // author: @silentznacht 
@@ -96,8 +102,8 @@ public class SignUp implements Runnable {
         // Convert to JSON
         try {
             SignUp jsonData = new SignUp();
-            jsonData.userEmail = emailToJson;
-            jsonData.password = pwToJson;
+            SignUp.userEmail = emailToJson;
+            SignUp.password = pwToJson;
 
             ObjectMapper objectMapper = new ObjectMapper();
             System.out.println("[UPDATE]: Json implemented successfully");

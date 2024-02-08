@@ -1,4 +1,4 @@
-package main.account.login;
+package account.login;
 
 
 public class Login {

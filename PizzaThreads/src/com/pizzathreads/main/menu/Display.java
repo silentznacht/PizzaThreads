@@ -1,6 +1,6 @@
-package main.menu;
+package menu;
 
-import main.menu.*;
+import menu.*;
 
 
 public class Display {

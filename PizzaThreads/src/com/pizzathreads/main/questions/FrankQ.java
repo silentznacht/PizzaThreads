@@ -1,4 +1,4 @@
-package main.questions;
+package questions;
 
 public class FrankQ {
     //Questions 

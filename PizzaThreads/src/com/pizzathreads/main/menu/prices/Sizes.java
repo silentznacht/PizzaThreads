@@ -1,4 +1,4 @@
-package main.menu.prices;
+package menu.prices;
 
 public class Sizes {
 

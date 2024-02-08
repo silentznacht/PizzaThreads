@@ -1,6 +1,6 @@
-package main.menu;
+package menu;
 
-import main.menu.prices.Sizes;
+import menu.prices.Sizes;
 
 public class ShowSizes { 
 

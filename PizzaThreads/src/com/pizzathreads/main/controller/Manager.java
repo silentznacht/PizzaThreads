@@ -1,10 +1,10 @@
-package main.controller;
+package controller;
 
-import main.menu.*;
-import main.services.*;
-import main.questions.*;
-import main.account.signup.*;
-import main.account.login.*;
+import menu.*;
+import services.*;
+import questions.*;
+import account.login.*;
+import account.signup.*;
 
 public class Manager {
 

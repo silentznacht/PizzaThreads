@@ -1,8 +1,8 @@
-package main.menu;
+package menu;
 
 
 import java.util.*;
-import main.controller.*;
+import controller.*;
 
 public class Menu implements Runnable { 
 	static Thread thread;

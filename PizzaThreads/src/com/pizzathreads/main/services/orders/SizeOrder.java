@@ -1,8 +1,9 @@
-package main.services.orders;
+package services.orders;
 
 import java.util.*;
-import main.controller.Input;
-import main.questions.FrankQ;
+
+import controller.Input;
+import questions.*;
 
 public class SizeOrder implements Runnable {
     // object i => scanner (str)
